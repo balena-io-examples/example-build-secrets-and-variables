@@ -1,0 +1,12 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian
+
+# Obviously we wouldn't usually print this out to our logs!
+RUN cat /run/secrets/my-recipe
+
+ARG MY_VAR_1
+ARG SERVICE1_VAR
+
+RUN echo "The build variable is ${MY_VAR_1}"
+RUN echo "This service specific VAR is ${SERVICE1_VAR}"
+
+CMD ["cat", "/etc/os-release"]

@@ -1,0 +1,10 @@
+build-variables:
+    global:
+        - MY_VAR_1=This is a variable
+    services:
+        service1:
+            - SERVICE1_VAR=This is a service specific variable
+build-secrets:
+    global:
+        - source: super-secret-recipe
+          dest: my-recipe 
